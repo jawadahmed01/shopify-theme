@@ -1,6 +1,31 @@
 [
   {
-    "name": "Theme settings",
-    "settings": []
+    "name": "Theme Info",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Theme: Theme from scratch"
+      },
+      {
+        "type": "paragraph",
+        "content": "Author: Jawad Ahmad"
+      },
+      {
+        "type": "paragraph",
+        "content": "Version: 1.0.0"
+      },
+      {
+        "type": "paragraph",
+        "content": "Description: A Custom theme development"
+      },
+      {
+        "type": "paragraph",
+        "content": "Documentation: https://shopify.dev/docs/api/shopify-cli"
+      },
+      {
+        "type": "paragraph",
+        "content": "Support: https://github.com/shopify/cli/issues"
+      }
+    ]
   }
 ]

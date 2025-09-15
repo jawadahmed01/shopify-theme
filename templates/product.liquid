@@ -1,0 +1,196 @@
+<div class="product-container">
+  {% comment %}Left column - Product Images{% endcomment %}
+  <div class="product-images">
+    <div class="main-image">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | img_url: 'large' }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          class="product-featured-image"
+        >
+      {% endif %}
+    </div>
+
+    {% if product.images.size > 1 %}
+      <div class="thumbnail-list">
+        {% for image in product.images %}
+          <div class="thumbnail">
+            <img
+              src="{{ image | img_url: 'medium' }}"
+              alt="{{ image.alt | escape }}"
+              class="thumbnail-image"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% comment %}Right column - Product Details{% endcomment %}
+  <div class="product-details">
+    {% if product.title %}
+      <h1 class="product-title">{{ product.title }}</h1>
+    {% endif %}
+
+    {% if product.vendor %}
+      <p class="product-vendor">{{ product.vendor }}</p>
+    {% endif %}
+
+    <div class="product-price">
+      <span class="current-price">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="compare-price">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div>
+
+    {% if product.description %}
+      <div class="product-description">
+        {{ product.description }}
+      </div>
+    {% endif %}
+
+    {% if product.variants.size > 1 %}
+      <div class="variant-selector">
+        <select name="id" id="productSelect">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
+
+    <div class="product-form">
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+        <button type="submit" class="add-to-cart-button">
+          {% if product.available %}
+            Add to Cart
+          {% else %}
+            Sold Out
+          {% endif %}
+        </button>
+      </form>
+    </div>
+
+    {% if product.tags.size > 0 %}
+      <div class="product-tags">
+        <span>Categories:</span>
+        {% for tag in product.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .thumbnail img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-title {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .product-vendor {
+    color: #666;
+    margin: 0;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+  }
+
+  .compare-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 1rem;
+  }
+
+  .product-description {
+    line-height: 1.6;
+  }
+
+  .variant-selector select {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .quantity-input {
+    width: 80px;
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
+
+  .add-to-cart-button {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .add-to-cart-button:hover {
+    background-color: #333;
+  }
+
+  .product-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background-color: #f0f0f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .product-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
