@@ -1,0 +1,152 @@
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Share your brand message and story</p>"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "home-hero",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="hero">
+  {% if section.settings.hero_image %}
+    <div class="hero-image-container">
+      {% assign hero_image = section.settings.hero_image %}
+      {{
+        hero_image
+        | image_url: width: 1920
+        | image_tag: class: 'hero-image', loading: 'lazy', alt: hero_image.alt
+        | escape
+      }}
+      <div class="overlay"></div>
+    </div>
+  {% endif %}
+
+  <div class="hero-content">
+    <div class="text-container">
+      {% if section.settings.heading != blank %}
+        <h1 class="hero-heading">
+          {{ section.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if section.settings.subtext != blank %}
+        <div class="hero-subtext">
+          {{ section.settings.subtext }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="hero-button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1rem;
+  }
+
+  .text-container {
+    text-align: center;
+    color: white;
+  }
+
+  .hero-heading {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-button {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+  }
+
+  .hero-button:hover {
+    background-color: #e5e5e5;
+  }
+
+  @media (min-width: 768px) {
+    .hero-heading {
+      font-size: 3.75rem;
+    }
+
+    .hero-subtext {
+      font-size: 1.25rem;
+    }
+  }
+</style>
