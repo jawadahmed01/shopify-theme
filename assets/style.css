@@ -4,16 +4,17 @@
   padding: 0;
 }
 body {
-   font-family: {{ settings.body_font.family }}, sans-serif;
-    font-weight: {{ settings.body_font.weight }};
-    font-style: {{ settings.body_font.style }};
-  }
+  font-family: var(--body_font), Arial, sans-serif;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: {{ settings.heading_font.family }}, sans-serif;
-    font-weight: {{ settings.heading_font.weight }};
-    font-style: {{ settings.heading_font.style }};
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading_font), Arial, sans-serif;
+}
 .container {
   max-width: 1240px !important;
   margin: auto !important;
