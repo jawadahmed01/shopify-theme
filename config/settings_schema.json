@@ -44,5 +44,40 @@
         "default": "helvetica_n4"
       }
     ]
+  },
+  {
+    "name": "Brand Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "brand_primary",
+        "label": "Primary Brand Color",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "brand_secondary",
+        "label": "Secondary Brand Color",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "color",
+        "id": "brand_accent",
+        "label": "Accent Color",
+        "default": "#ff6600"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#ff6600"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ff6600"
+      }
+    ]
   }
 ]
