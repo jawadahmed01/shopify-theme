@@ -4,7 +4,7 @@
   padding: 0;
 }
 body {
-  font-family: var(--body_font), Arial, sans-serif;
+  font-family: var(--body-font);
 }
 
 h1,
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading_font), Arial, sans-serif;
+  font-family: var(--heading-font);
 }
 .container {
   max-width: 1240px !important;

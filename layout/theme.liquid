@@ -11,6 +11,15 @@
     {% stylesheet %}
       {{ settings.heading_font | font_face : display: 'swap' }}
       {{ settings.body_font | font_face: display: 'swap' }}
+      :root {
+        --heading-font: {{ settings.heading_font.family | default: 'Helvetica, Arial, sans-serif' }};
+        --body-font: {{ settings.body_font.family | default: 'Helvetica, Arial, sans-serif' }};
+        --primary-color: {{ settings.primary_color | default: '#000000' }};
+        --secondary-color: {{ settings.secondary_color | default: '#ffffff' }};
+        --accent-color: {{ settings.accent_color | default: '#ff0000' }};
+        --background-color: {{ settings.background_color | default: '#ffffff' }};
+        --text-color: {{ settings.text_color | default: '#000000' }};
+      }
     {% endstylesheet %}
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
   </head>
