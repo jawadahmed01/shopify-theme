@@ -3,6 +3,17 @@
   margin: 0;
   padding: 0;
 }
+body {
+   font-family: {{ settings.body_font.family }}, sans-serif;
+    font-weight: {{ settings.body_font.weight }};
+    font-style: {{ settings.body_font.style }};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: {{ settings.heading_font.family }}, sans-serif;
+    font-weight: {{ settings.heading_font.weight }};
+    font-style: {{ settings.heading_font.style }};
+  }
 .container {
   max-width: 1240px !important;
   margin: auto !important;
