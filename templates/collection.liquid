@@ -1,0 +1,108 @@
+<div class="collection-container">
+  <h1 class="collection-title">{{ collection.title }}</h1>
+
+  {% if collection.products.size > 0 %}
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <a href="{{ product.url }}" class="product-card__link">
+            <div class="product-card__image-wrapper">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 400 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  class="product-card__image"
+                  loading="lazy"
+                  width="400"
+                  height="400"
+                >
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag: 'product-card__image' }}
+              {% endif %}
+            </div>
+
+            <div class="product-card__info">
+              <h2 class="product-card__title">{{ product.title }}</h2>
+              <span class="product-card__price">
+                {% if product.price_varies %}
+                  From {{ product.price_min | money }}
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+              </span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No products found in this collection</p>
+  {% endif %}
+</div>
+
+<style>
+  .collection-container {
+    padding: 2rem;
+  }
+
+  .collection-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    transition: transform 0.3s ease;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-card__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-card__image-wrapper {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .product-card__image {
+    transform: scale(1.05);
+  }
+
+  .product-card__info {
+    padding: 1rem;
+  }
+
+  .product-card__title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .product-card__price {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+</style>

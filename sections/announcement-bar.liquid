@@ -1,0 +1,40 @@
+<div
+  class="announcement-bar"
+  style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};"
+>
+  <div class="announcement-container">
+    <p class="announcement-text">{{ section.settings.announcement_text }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "Welcome to our store! Free shipping on all orders 🚚"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ]
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}
