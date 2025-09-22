@@ -25,7 +25,12 @@
       {
         "type": "paragraph",
         "content": "Support: https://github.com/shopify/cli/issues"
-      },
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
       {
         "type": "font_picker",
         "id": "heading_font",
