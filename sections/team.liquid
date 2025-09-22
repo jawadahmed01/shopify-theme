@@ -1,0 +1,114 @@
+<div class="section-team">
+  {% style %}
+    .section-team {
+        padding: 80px 0;
+        background-color: {{ section.settings.background_color }};
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .team-member {
+        text-align: center;
+    }
+    .team-member-image {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    .team-member-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: {{ section.settings.name_color }};
+    }
+    .team-member-position {
+        font-size: 16px;
+        color: {{ section.settings.position_color }};
+    }
+  {% endstyle %}
+
+  <div class="team-grid">
+    {% for block in section.blocks %}
+      <div class="team-member" {{ block.shopify_attributes }}>
+        {% if block.settings.image %}
+          {{ block.settings.image | image_url: width: 300 | image_tag: class: 'team-member-image', loading: 'lazy' }}
+        {% endif %}
+        <h3 class="team-member-name">{{ block.settings.name }}</h3>
+        <p class="team-member-position">{{ block.settings.position }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Team Members",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "position_color",
+      "label": "Position Color",
+      "default": "#666666"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Member Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Team Member Name"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "Position",
+          "default": "Job Position"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Team Grid",
+      "blocks": [
+        {
+          "type": "team_member"
+        },
+        {
+          "type": "team_member"
+        },
+        {
+          "type": "team_member"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

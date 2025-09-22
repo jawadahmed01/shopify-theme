@@ -4,8 +4,17 @@
             "type": "hero",
             
         },
+        "featured-collection": {
+            "type": "featured-collection",
+            
+        },
+        "team":{
+            "type": "team",
+        }
     },
     "order":[
-        "hero"
+        "hero",
+        "featured-collection",
+        "team"
     ]
 }
