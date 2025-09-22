@@ -3,16 +3,6 @@
   margin: 0;
   padding: 0;
 }
-:root {
-  --heading-font: {{ settings.heading_font.family | default: 'Helvetica, Arial, sans-serif' }};
-  --body-font: {{ settings.body_font.family | default: 'Helvetica, Arial, sans-serif' }};
-  --primary-color: {{ settings.brand_primary | default: '#000000' }};
-  --secondary-color: {{ settings.brand_secondary | default: '#ffffff' }};
-  --accent-color: {{ settings.brand_accent | default: '#ff0000' }};
-  --background-color: {{ settings.background_color | default: '#ffffff' }};
-  --text-color: {{ settings.text_color | default: '#000000' }};
-}
-
 body {
   font-family: var(--body-font);
   background-color: var(--background-color);
