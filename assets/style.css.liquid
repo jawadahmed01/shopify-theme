@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
 }
-
 :root {
   --heading-font: {{ settings.heading_font.family | default: 'Helvetica, Arial, sans-serif' }};
   --body-font: {{ settings.body_font.family | default: 'Helvetica, Arial, sans-serif' }};
@@ -14,7 +13,6 @@
   --text-color: {{ settings.text_color | default: '#000000' }};
 }
 
-/* Global styles */
 body {
   font-family: var(--body-font);
   background-color: var(--background-color);
@@ -25,14 +23,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
 }
 
-.button {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.button:hover {
-  background: var(--accent-color);
-}
 .container {
   max-width: 1240px !important;
   margin: auto !important;
