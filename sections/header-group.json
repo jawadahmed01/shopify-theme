@@ -11,8 +11,8 @@
       "settings": {}
     }
   },
-  "oreder": [
+  "order": [
     "announcement-bar",
     "header"
-  ],
+  ]
 }
