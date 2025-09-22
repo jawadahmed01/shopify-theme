@@ -9,16 +9,30 @@
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}">
     {{ content_for_header }}
     {% stylesheet %}
-      {{ settings.heading_font | font_face : display: 'swap' }}
-      {{ settings.body_font | font_face: display: 'swap' }}
-      :root {
-        --heading-font: {{ settings.heading_font.family | default: 'Helvetica, Arial, sans-serif' }};
-        --body-font: {{ settings.body_font.family | default: 'Helvetica, Arial, sans-serif' }};
-        --primary-color: {{ settings.brand_primary | default: '#000000' }};
-        --secondary-color: {{ settings.brand_secondary | default: '#ffffff' }};
-        --accent-color: {{ settings.brand_accent | default: '#ff0000' }};
-        --background-color: {{ settings.background_color | default: '#ffffff' }};
-        --text-color: {{ settings.text_color | default: '#000000' }};
+                  {{ settings.heading_font | font_face : display: 'swap' }}
+                  {{ settings.body_font | font_face: display: 'swap' }}
+                  :root {
+                    --heading-font: {{ settings.heading_font.family | default: 'Helvetica, Arial, sans-serif' }};
+                    --body-font: {{ settings.body_font.family | default: 'Helvetica, Arial, sans-serif' }};
+                    --primary-color: {{ settings.brand_primary | default: '#000000' }};
+                    --secondary-color: {{ settings.brand_secondary | default: '#ffffff' }};
+                    --accent-color: {{ settings.brand_accent | default: '#ff0000' }};
+                    --background-color: {{ settings.background_color | default: '#ffffff' }};
+                    --text-color: {{ settings.text_color | default: '#000000' }};
+                  }
+
+                  body {
+              font-family: var(--body-font);
+              background-color: var(--background-color);
+              color: var(--text-color);
+            }
+            h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--heading-font);
       }
     {% endstylesheet %}
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
