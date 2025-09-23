@@ -11,7 +11,10 @@
   "sections": {
     "main": {
       "type": "page",
-      "settings": {}
+      "settings": {
+        "title": "Contact Us",
+        "content": "<p>Share your brand's story or mission here. Connect with your customers by letting them know who you are and what you stand for.</p>"
+      }
     }
   },
   "order": [
