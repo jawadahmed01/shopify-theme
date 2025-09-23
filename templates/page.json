@@ -1,14 +1,7 @@
 {
-    "sections": {
-        "main": {
-            "type": "page",
-            "settings": {
-                "show_dynamic_checkout": true,
-                "enable_sticky_info": true
-            }
-        }
+    "section":{
+        "type":"page",
+        "settings":{}
     },
-    "order": [
-        "page"
-    ]
+    "order":["hero"] 
 }
