@@ -1,14 +1,11 @@
 {
-    "sections": {
-        "main": {
-            "type": "main-product",
-            "settings": {
-                "show_dynamic_checkout": true,
-                "enable_sticky_info": true
-            }
-        }
-    },
-    "Order": [
-        "main"
-    ]
+  "sections": {
+    "main": {
+      "type": "collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection"
+  ]
 }
