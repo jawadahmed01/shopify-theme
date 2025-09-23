@@ -19,6 +19,17 @@
         "button_text": "Shop Now"
       }
     },
+    "siimple_xifBLi": {
+      "type": "siimple",
+      "name": "Simple Text",
+      "settings": {
+        "heading_text": "General Heading",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>",
+        "image": "shopify://shop_images/1_0069_1.png",
+        "button_text": "Button Text",
+        "button_url": ""
+      }
+    },
     "team_XVKD47": {
       "type": "team",
       "blocks": {
@@ -71,14 +82,6 @@
       "settings": {
         "title": "About Our Story",
         "content": "<p>Share your brand's story or mission here. Connect with your customers by letting them know who you are and what you stand for.</p>"
-      }
-    },
-    "siimple_xifBLi": {
-      "type": "siimple",
-      "name": "Simple Text",
-      "settings": {
-        "heading_text": "General Heading",
-        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>"
       }
     }
   },
