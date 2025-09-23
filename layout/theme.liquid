@@ -8,9 +8,18 @@
     <title>{{ page_title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}">
     {{ content_for_header }}
-    {{ settings.heading_font | font_face: display: 'swap' }}
-    {{ settings.body_font | font_face: display: 'swap' }}
-
+    <style>
+      {{ settings.heading_font | font_face: display: 'swap' }}
+      {{ settings.body_font | font_face: display: 'swap' }}
+      :root {
+        --heading-font: '{{ settings.heading_font.family }}', sans-serif;
+        --body-font: '{{ settings.body_font.family }}', sans-serif;
+        --primary-color: {{ settings.primary_color }};
+        --secondary-color: {{ settings.secondary_color }};
+        --background-color: {{ settings.background_color }};
+        --text-color: {{ settings.text_color }};
+      }
+    </style>
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
   </head>
   <body>
