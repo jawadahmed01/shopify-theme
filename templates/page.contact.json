@@ -1,0 +1,7 @@
+{
+    "section":{
+        "type":"page.contact",
+        "settings":{}
+    },
+    "order":["hero"]
+}
