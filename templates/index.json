@@ -27,7 +27,9 @@
         "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>",
         "image": "shopify://shop_images/1_0525_1.png",
         "button_text": "Button Text",
-        "button_url": "https://www.lipsum.com/"
+        "button_url": "https://www.lipsum.com/",
+        "number": 2563,
+        "padding": 3
       }
     },
     "team_XVKD47": {
