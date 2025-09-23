@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-page",
+            "settings": {
+                "show_dynamic_checkout": true,
+                "enable_sticky_info": true
+            }
+        }
+    },
+    "order": [
+        "main-page"
+    ]
+}
