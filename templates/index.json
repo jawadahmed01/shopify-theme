@@ -1,20 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections":{
-        "hero": {
-            "type": "hero",
-            
-        },
-        "featured-collection": {
-            "type": "featured-collection",
-            
-        },
-        "team":{
-            "type": "team",
-        }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "hero_image": "shopify://shop_images/left.png",
+        "heading": "Heading",
+        "subtext": "<p>Share your brand message and story</p>",
+        "button_link": "shopify://collections/all",
+        "button_text": "Shop Now"
+      }
     },
-    "order":[
-        "hero",
-        "featured-collection",
-        "team"
-    ]
+    "team_XVKD47": {
+      "type": "team",
+      "blocks": {
+        "team_member_qEMPYa": {
+          "type": "team_member",
+          "settings": {
+            "name": "Team Member Name",
+            "position": "Job Position"
+          }
+        },
+        "team_member_cqF8kn": {
+          "type": "team_member",
+          "settings": {
+            "name": "Team Member Name",
+            "position": "Job Position"
+          }
+        },
+        "team_member_kp46Bd": {
+          "type": "team_member",
+          "settings": {
+            "name": "Team Member Name",
+            "position": "Job Position"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_qEMPYa",
+        "team_member_cqF8kn",
+        "team_member_kp46Bd"
+      ],
+      "name": "Team Section",
+      "settings": {
+        "background_color": "#ffffff",
+        "name_color": "#000000",
+        "position_color": "#666666"
+      }
+    },
+    "feature_collection_7YYB4C": {
+      "type": "feature-collection",
+      "name": "Feature Collection",
+      "settings": {
+        "featured_collection": "energy-drink",
+        "title": "Featured Collection",
+        "products_to_show": 4
+      }
+    },
+    "page_bp3HeG": {
+      "type": "page",
+      "name": "About Us",
+      "settings": {
+        "title": "About Our Story",
+        "content": "<p>Share your brand's story or mission here. Connect with your customers by letting them know who you are and what you stand for.</p>"
+      }
+    },
+    "siimple_xifBLi": {
+      "type": "siimple",
+      "name": "Simple Text",
+      "settings": {
+        "heading_text": "General Heading",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "siimple_xifBLi",
+    "team_XVKD47",
+    "feature_collection_7YYB4C",
+    "page_bp3HeG"
+  ]
 }
