@@ -29,7 +29,8 @@
         "button_text": "Button Text",
         "button_url": "https://www.lipsum.com/",
         "number": 2563,
-        "padding": 3
+        "padding": 3,
+        "select": "option2"
       }
     },
     "team_XVKD47": {
