@@ -14,6 +14,7 @@
   src="{{ section.settings.image | img_url: 'master' }}" 
   alt="{{ section.settings.heading_text | escape }}">
     <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+    {{ section.settings.number }}
 </div>
 
 {% schema %}
@@ -47,6 +48,12 @@
         "type": "url",
         "id": "button_url",
         "label": "Button Url",
+    },
+    {
+       "type": "number",
+       "id": "number",
+       "label": "Number",
+       "default" : 2563,
     }
    ],
    "blocks": [],
