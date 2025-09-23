@@ -14,7 +14,9 @@
   src="{{ section.settings.image | img_url: 'master' }}" 
   alt="{{ section.settings.heading_text | escape }}">
     <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
-    {{ section.settings.number }}
+    {% if section.settings.number > 0 %}
+        {{ section.settings.number }}
+    {% endif %}
 </div>
 
 {% schema %}
