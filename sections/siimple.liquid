@@ -10,7 +10,9 @@
 <div class="page-wrap">
     <h1>{{ section.settings.heading_text }} </h1>
     <p>{{ section.settings.description }}</p>
-    <img src="{{ section.settings.image }}" alt="{{ section.settings.heading_text }}">
+    <img 
+  src="{{ section.settings.image | img_url: 'master' }}" 
+  alt="{{ section.settings.heading_text | escape }}">
     <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
 </div>
 
